@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login / Register — Luxora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Luxora</a>
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="products.html">Products</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth container">
+    <div class="auth-card">
+      <h2 id="authTitle">Login</h2>
+      <form id="authForm">
+        <label>Email
+          <input type="email" id="email" required>
+        </label>
+        <label>Password
+          <input type="password" id="password" required>
+        </label>
+        <label id="roleLabel">Role
+          <select id="role">
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+          </select>
+        </label>
+        <div class="auth-actions">
+          <button type="submit" class="btn primary" id="authBtn">Login</button>
+          <button type="button" class="btn ghost" id="toggleAuth">Switch to Register</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

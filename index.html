@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luxora — Premium E-Commerce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loader" class="loader hidden"></div>
+
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Luxora</a>
+      <nav class="nav">
+        <input type="text" id="searchInput" placeholder="Search products..." aria-label="Search">
+        <div class="nav-links">
+          <a href="products.html">Products</a>
+          <a href="wishlist.html" id="nav-wishlist">Wishlist <span class="badge" id="wish-count">0</span></a>
+          <a href="cart.html" id="nav-cart">Cart <span class="badge" id="cart-count">0</span></a>
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+          <a href="login.html" id="nav-user" class="btn-link">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Discover Timeless Elegance</h1>
+          <p>Handpicked premium products crafted for those who appreciate the finer things.</p>
+          <div class="hero-cta">
+            <a href="products.html" class="btn primary">Shop Collection</a>
+            <a href="#about" class="btn ghost">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="glass-card">
+            <img src="https://images.unsplash.com/photo-1519741491669-58a3e9f3a9a8?q=80&w=1200&auto=format&fit=crop" alt="Premium"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="stats container">
+      <div class="stats-grid">
+        <div class="stat">
+          <h3 class="counter" data-target="1200">0</h3>
+          <p>Luxury Items Sold</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="98">0</h3>
+          <p>Average Customer Rating</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="24">0</h3>
+          <p>Exclusive Collections</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured container">
+      <h2>Featured Products</h2>
+      <div id="featured-list" class="product-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Luxora</h4>
+        <p>Elevated goods for a refined lifestyle.</p>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>hello@luxora.example</p>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Luxora</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

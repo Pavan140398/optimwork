@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seller Dashboard — Luxora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Luxora</a>
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="products.html">Products</a>
+          <a href="login.html" id="nav-user-seller">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Seller Dashboard</h1>
+    <p id="welcome"></p>
+    <section class="seller-actions">
+      <h3>Your Listings</h3>
+      <div id="seller-list" class="product-grid"></div>
+    </section>
+  </main>
+
+  <script>
+    // Ensure only sellers access this page
+    const user = JSON.parse(localStorage.getItem('luxora_user')||'null');
+    if(!user || user.role !== 'seller'){
+      alert('Access denied: sellers only');
+      location.href = 'index.html';
+    } else {
+      document.getElementById('welcome').textContent = `Welcome, ${user.name} — Seller Dashboard`;
+      // simple listing: show featured products (as seller listings placeholder)
+      const PRODUCTS = window.PRODUCTS || null;
+      if(PRODUCTS){
+        const el = document.getElementById('seller-list');
+        PRODUCTS.filter(p=>p.featured).forEach(p=>{ el.insertAdjacentHTML('beforeend', `
+          <article class="product-card">
+            <div class="product-thumb"><img src="${p.image}" alt="${p.title}" /></div>
+            <div class="p-info"><div class="p-title">${p.title}</div><div class="p-price">$${p.price}</div></div>
+          </article>
+        `)})
+      }
+    }
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

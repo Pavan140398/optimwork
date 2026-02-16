@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Luxora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="loader" class="loader hidden"></div>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">Luxora</a>
+      <nav class="nav">
+        <input type="text" id="searchInput2" placeholder="Search products..." aria-label="Search">
+        <div class="nav-links">
+          <a href="products.html">Products</a>
+          <a href="wishlist.html" id="nav-wishlist-2">Wishlist <span class="badge" id="wish-count-2">0</span></a>
+          <a href="cart.html" id="nav-cart-2">Cart <span class="badge" id="cart-count-2">0</span></a>
+          <button id="themeToggle2" class="icon-btn">🌙</button>
+          <a href="login.html" id="nav-user-2" class="btn-link">Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+        <select id="sortSelect">
+          <option value="default">Sort</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <div id="product-list" class="product-grid"></div>
+    </section>
+  </main>
+
+  <!-- Quick view modal removed as requested -->
+
+  <div id="toast" class="toast"></div>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
